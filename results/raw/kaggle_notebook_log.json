@@ -1,0 +1,102 @@
+[{"stream_name":"stdout","time":0.655543453,"data":"\n"}
+,{"stream_name":"stdout","time":0.655572699,"data":"$ rm -rf lab \u0026\u0026 git clone https://github.com/adarshcod30/llm-serving-lab.git lab \u0026\u0026 cd lab \u0026\u0026 git checkout main \u0026\u0026 git rev-parse HEAD \u003e ../COMMIT.txt \u0026\u0026 cat ../COMMIT.txt\n"}
+,{"stream_name":"stderr","time":0.700868384,"data":"Cloning into 'lab'...\n"}
+,{"stream_name":"stderr","time":1.7745445869999998,"data":"Already on 'main'\n"}
+,{"stream_name":"stdout","time":1.775425612,"data":"Your branch is up to date with 'origin/main'.\n"}
+,{"stream_name":"stdout","time":1.7809298,"data":"362828357aa8508a9705b12307508049c1d586b7\n"}
+,{"stream_name":"stdout","time":1.781714389,"data":"[exit 0 in 1s]\n"}
+,{"stream_name":"stdout","time":1.781724702,"data":"\n"}
+,{"stream_name":"stdout","time":1.7817288709999999,"data":"$ nvidia-smi --query-gpu=name,memory.total,compute_cap,driver_version --format=csv\n"}
+,{"stream_name":"stdout","time":1.819128573,"data":"name, memory.total [MiB], compute_cap, driver_version\n"}
+,{"stream_name":"stdout","time":1.819194397,"data":"Tesla T4, 15360 MiB, 7.5, 580.178.04\n"}
+,{"stream_name":"stdout","time":1.8192886179999999,"data":"Tesla T4, 15360 MiB, 7.5, 580.178.04\n"}
+,{"stream_name":"stdout","time":1.825302625,"data":"[exit 0 in 0s]\n"}
+,{"stream_name":"stdout","time":1.825319787,"data":"\n"}
+,{"stream_name":"stdout","time":1.825323849,"data":"$ pip install -q vllm aiohttp tiktoken 2\u003e\u00261 | tail -3\n"}
+,{"stream_name":"stdout","time":221.2227095,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":221.222761841,"data":"google-adk 2.7.1 requires opentelemetry-api\u003c=1.42.1,\u003e=1.39, but you have opentelemetry-api 1.45.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":221.222766627,"data":"google-adk 2.7.1 requires opentelemetry-sdk\u003c=1.42.1,\u003e=1.39, but you have opentelemetry-sdk 1.45.2 which is incompatible.\n"}
+,{"stream_name":"stdout","time":221.223182686,"data":"[exit 0 in 219s]\n"}
+,{"stream_name":"stdout","time":221.223205096,"data":"\n"}
+,{"stream_name":"stdout","time":221.22321033,"data":"$ cd lab \u0026\u0026 pip install -q -e . 2\u003e\u00261 | tail -2\n"}
+,{"stream_name":"stdout","time":226.841993896,"data":"[exit 0 in 6s]\n"}
+,{"stream_name":"stdout","time":226.842030979,"data":"\n"}
+,{"stream_name":"stdout","time":226.842038992,"data":"$ cd lab \u0026\u0026 python -m pytest -q 2\u003e\u00261 | tail -3\n"}
+,{"stream_name":"stdout","time":233.433978288,"data":".....                                                                    [100%]\n"}
+,{"stream_name":"stdout","time":233.434004642,"data":"5 passed in 3.83s\n"}
+,{"stream_name":"stdout","time":233.43415794,"data":"[exit 0 in 7s]\n"}
+,{"stream_name":"stdout","time":233.43449431,"data":"\n"}
+,{"stream_name":"stdout","time":233.434514134,"data":"$ cd lab \u0026\u0026 python scripts/hf_baseline.py --model Qwen/Qwen2.5-1.5B-Instruct --out /kaggle/working/results/hf_baseline.json\n"}
+,{"stream_name":"stderr","time":255.478250163,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":258.905176981,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stderr","time":283.724960984,"data":"\rLoading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/338 [00:00\u003c01:00,  5.61it/s]\rLoading weights:  19%|█▊        | 63/338 [00:00\u003c00:01, 264.86it/s]\rLoading weights:  28%|██▊       | 96/338 [00:00\u003c00:00, 261.28it/s]\rLoading weights:  37%|███▋      | 126/338 [00:00\u003c00:00, 257.05it/s]\rLoading weights:  47%|████▋     | 159/338 [00:00\u003c00:00, 268.37it/s]\rLoading weights:  58%|█████▊    | 195/338 [00:00\u003c00:00, 275.03it/s]\rLoading weights:  66%|██████▋   | 224/338 [00:00\u003c00:00, 266.40it/s]\rLoading weights:  76%|███████▌  | 256/338 [00:01\u003c00:00, 268.03it/s]\rLoading weights:  86%|████████▌ | 291/338 [00:01\u003c00:00, 272.46it/s]\rLoading weights:  97%|█████████▋| 327/338 [00:01\u003c00:00, 271.40it/s]\rLoading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 265.95it/s]\n"}
+,{"stream_name":"stdout","time":297.578183375,"data":"{'batch_size': 1, 'new_tokens_each': 128, 'wall_s_median': 3.841, 'output_tok_per_s': 33.32, 'time_per_token_ms': 30.01, 'peak_mem_gib': 2.89}\n"}
+,{"stream_name":"stdout","time":311.365810975,"data":"{'batch_size': 4, 'new_tokens_each': 128, 'wall_s_median': 4.481, 'output_tok_per_s': 114.25, 'time_per_token_ms': 35.01, 'peak_mem_gib': 2.92}\n"}
+,{"stream_name":"stdout","time":325.447838916,"data":"{'batch_size': 8, 'new_tokens_each': 128, 'wall_s_median': 4.6, 'output_tok_per_s': 222.61, 'time_per_token_ms': 35.94, 'peak_mem_gib': 2.95}\n"}
+,{"stream_name":"stdout","time":340.000891854,"data":"{'batch_size': 16, 'new_tokens_each': 128, 'wall_s_median': 4.72, 'output_tok_per_s': 433.89, 'time_per_token_ms': 36.88, 'peak_mem_gib': 3.03}\n"}
+,{"stream_name":"stdout","time":355.657707816,"data":"{'batch_size': 32, 'new_tokens_each': 128, 'wall_s_median': 5.051, 'output_tok_per_s': 810.97, 'time_per_token_ms': 39.46, 'peak_mem_gib': 3.14}\n"}
+,{"stream_name":"stdout","time":359.512100073,"data":"[exit 0 in 126s]\n"}
+,{"stream_name":"stdout","time":359.512136317,"data":"\n"}
+,{"stream_name":"stdout","time":359.512140492,"data":"$ cd lab \u0026\u0026 python scripts/vllm_bench.py --model Qwen/Qwen2.5-1.5B-Instruct --tag fp16 --out /kaggle/working/results/vllm_fp16.json\n"}
+,{"stream_name":"stdout","time":518.902992846,"data":"c=  1 n= 16 out_tok/s=    65.0 ttft_p50=   29.9ms ttft_p95=   30.7ms tpot_p50=  15.2ms failed=0\n"}
+,{"stream_name":"stdout","time":535.265213713,"data":"c=  2 n= 16 out_tok/s=   129.3 ttft_p50=   47.0ms ttft_p95=   48.8ms tpot_p50=  15.2ms failed=0\n"}
+,{"stream_name":"stdout","time":544.131068703,"data":"c=  4 n= 16 out_tok/s=   247.6 ttft_p50=   52.8ms ttft_p95=   68.5ms tpot_p50=  15.8ms failed=0\n"}
+,{"stream_name":"stdout","time":553.671387739,"data":"c=  8 n= 32 out_tok/s=   459.6 ttft_p50=   87.0ms ttft_p95=   98.2ms tpot_p50=  16.9ms failed=0\n"}
+,{"stream_name":"stdout","time":564.319458758,"data":"c= 16 n= 64 out_tok/s=   820.2 ttft_p50=  152.0ms ttft_p95=  190.8ms tpot_p50=  18.5ms failed=0\n"}
+,{"stream_name":"stdout","time":578.203523447,"data":"c= 32 n=128 out_tok/s=  1235.5 ttft_p50=  244.3ms ttft_p95=  307.9ms tpot_p50=  24.2ms failed=0\n"}
+,{"stream_name":"stdout","time":595.674902394,"data":"c= 64 n=256 out_tok/s=  1940.3 ttft_p50=  325.1ms ttft_p95=  545.3ms tpot_p50=  30.6ms failed=0\n"}
+,{"stream_name":"stdout","time":620.908178523,"data":"c=128 n=512 out_tok/s=  2660.4 ttft_p50=  603.7ms ttft_p95= 1002.2ms tpot_p50=  43.4ms failed=0\n"}
+,{"stream_name":"stdout","time":721.426596423,"data":"prefix_cache_on first=1411ms later_p50=138ms prompt_tokens=1140\n"}
+,{"stream_name":"stdout","time":806.97967569,"data":"prefix_cache_off first=488ms later_p50=984ms prompt_tokens=1140\n"}
+,{"stream_name":"stdout","time":812.696347579,"data":"wrote /kaggle/working/results/vllm_fp16.json\n"}
+,{"stream_name":"stdout","time":812.739017587,"data":"[exit 0 in 453s]\n"}
+,{"stream_name":"stdout","time":812.739041601,"data":"\n"}
+,{"stream_name":"stdout","time":812.739047629,"data":"$ cd lab \u0026\u0026 python -m servelab.tokens /kaggle/working/results/tokenization.json\n"}
+,{"stream_name":"stderr","time":822.962593795,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":838.116502286,"data":"[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.\n"}
+,{"stream_name":"stdout","time":838.256602178,"data":"qwen2.5                english  tokens=  61 chars/tok= 5.10 tok/word= 1.15 rt=True\n"}
+,{"stream_name":"stdout","time":838.256638534,"data":"qwen2.5                hindi    tokens= 235 chars/tok= 1.05 tok/word= 4.80 rt=True\n"}
+,{"stream_name":"stdout","time":838.256645231,"data":"qwen2.5                python   tokens=  90 chars/tok= 2.61 tok/word= 2.25 rt=True\n"}
+,{"stream_name":"stdout","time":838.256650597,"data":"qwen2.5                json     tokens= 118 chars/tok= 1.99 tok/word= 5.90 rt=True\n"}
+,{"stream_name":"stdout","time":838.256655544,"data":"qwen2.5                numbers  tokens=  63 chars/tok= 1.27 tok/word= 6.30 rt=True\n"}
+,{"stream_name":"stdout","time":838.256660456,"data":"llama3.2               english  tokens=  61 chars/tok= 5.10 tok/word= 1.15 rt=True\n"}
+,{"stream_name":"stdout","time":838.256664772,"data":"llama3.2               hindi    tokens= 132 chars/tok= 1.87 tok/word= 2.69 rt=True\n"}
+,{"stream_name":"stdout","time":838.256669054,"data":"llama3.2               python   tokens=  88 chars/tok= 2.67 tok/word= 2.20 rt=True\n"}
+,{"stream_name":"stdout","time":838.256673202,"data":"llama3.2               json     tokens= 101 chars/tok= 2.33 tok/word= 5.05 rt=True\n"}
+,{"stream_name":"stdout","time":838.256677435,"data":"llama3.2               numbers  tokens=  43 chars/tok= 1.86 tok/word= 4.30 rt=True\n"}
+,{"stream_name":"stdout","time":838.256681776,"data":"gpt2                   english  tokens=  64 chars/tok= 4.86 tok/word= 1.21 rt=True\n"}
+,{"stream_name":"stdout","time":838.256691659,"data":"gpt2                   hindi    tokens= 386 chars/tok= 0.64 tok/word= 7.88 rt=True\n"}
+,{"stream_name":"stdout","time":838.256694881,"data":"gpt2                   python   tokens= 117 chars/tok= 2.01 tok/word= 2.92 rt=True\n"}
+,{"stream_name":"stdout","time":838.256697726,"data":"gpt2                   json     tokens= 110 chars/tok= 2.14 tok/word= 5.50 rt=True\n"}
+,{"stream_name":"stdout","time":838.256700549,"data":"gpt2                   numbers  tokens=  40 chars/tok= 2.00 tok/word= 4.00 rt=True\n"}
+,{"stream_name":"stdout","time":838.256703437,"data":"cl100k_base (GPT-4)    english  tokens=  61 chars/tok= 5.10 tok/word= 1.15 rt=True\n"}
+,{"stream_name":"stdout","time":838.256706262,"data":"cl100k_base (GPT-4)    hindi    tokens= 254 chars/tok= 0.97 tok/word= 5.18 rt=True\n"}
+,{"stream_name":"stdout","time":838.256709088,"data":"cl100k_base (GPT-4)    python   tokens=  88 chars/tok= 2.67 tok/word= 2.20 rt=True\n"}
+,{"stream_name":"stdout","time":838.256711899,"data":"cl100k_base (GPT-4)    json     tokens= 101 chars/tok= 2.33 tok/word= 5.05 rt=True\n"}
+,{"stream_name":"stdout","time":838.256714801,"data":"cl100k_base (GPT-4)    numbers  tokens=  43 chars/tok= 1.86 tok/word= 4.30 rt=True\n"}
+,{"stream_name":"stdout","time":838.256717621,"data":"o200k_base (GPT-4o)    english  tokens=  61 chars/tok= 5.10 tok/word= 1.15 rt=True\n"}
+,{"stream_name":"stdout","time":838.256720451,"data":"o200k_base (GPT-4o)    hindi    tokens=  80 chars/tok= 3.09 tok/word= 1.63 rt=True\n"}
+,{"stream_name":"stdout","time":838.256748869,"data":"o200k_base (GPT-4o)    python   tokens=  88 chars/tok= 2.67 tok/word= 2.20 rt=True\n"}
+,{"stream_name":"stdout","time":838.256753932,"data":"o200k_base (GPT-4o)    json     tokens= 101 chars/tok= 2.33 tok/word= 5.05 rt=True\n"}
+,{"stream_name":"stdout","time":838.256758658,"data":"o200k_base (GPT-4o)    numbers  tokens=  42 chars/tok= 1.90 tok/word= 4.20 rt=True\n"}
+,{"stream_name":"stdout","time":838.256762053,"data":"failed: {}\n"}
+,{"stream_name":"stdout","time":839.418798604,"data":"[exit 0 in 27s]\n"}
+,{"stream_name":"stdout","time":839.418830228,"data":"\n"}
+,{"stream_name":"stdout","time":839.418835395,"data":"$ cp lab/vllm_*.log /kaggle/working/results/ 2\u003e/dev/null; ls -la /kaggle/working/results\n"}
+,{"stream_name":"stdout","time":839.429623772,"data":"total 256\n"}
+,{"stream_name":"stdout","time":839.429644744,"data":"drwxr-xr-x 2 root root   4096 Nov 17 08:35 .\n"}
+,{"stream_name":"stdout","time":839.429649298,"data":"drwxr-xr-x 4 root root   4096 Nov 17 08:25 ..\n"}
+,{"stream_name":"stdout","time":839.429653272,"data":"-rw-r--r-- 1 root root   1419 Nov 17 08:27 hf_baseline.json\n"}
+,{"stream_name":"stdout","time":839.429657007,"data":"-rw-r--r-- 1 root root   7535 Nov 17 08:35 tokenization.json\n"}
+,{"stream_name":"stdout","time":839.429660681,"data":"-rw-r--r-- 1 root root  12463 Nov 17 08:35 vllm_fp16.json\n"}
+,{"stream_name":"stdout","time":839.42966454,"data":"-rw-r--r-- 1 root root  48054 Nov 17 08:35 vllm_fp16_prefix_cache_off.log\n"}
+,{"stream_name":"stdout","time":839.429668396,"data":"-rw-r--r-- 1 root root  47842 Nov 17 08:35 vllm_fp16_prefix_cache_on.log\n"}
+,{"stream_name":"stdout","time":839.429671663,"data":"-rw-r--r-- 1 root root 125241 Nov 17 08:35 vllm_fp16_sweep.log\n"}
+,{"stream_name":"stdout","time":839.43001462,"data":"[exit 0 in 0s]\n"}
+,{"stream_name":"stderr","time":841.418898249,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":841.41894105,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":841.607001299,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":841.607040553,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":842.543161391,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":843.466685565,"data":"[NbConvertApp] Writing 279235 bytes to __results__.html\n"}
+]

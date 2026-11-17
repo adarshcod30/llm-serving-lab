@@ -43,3 +43,13 @@ def test_loadgen_recovers_known_server_speed(c):
     # server: 50 ms to first token, 10 ms per token after. Allow scheduler jitter.
     assert TTFT_S * 0.9 < r["ttft_s"]["p50"] < TTFT_S + 0.04
     assert TOKEN_S * 0.9 < r["tpot_s"]["p50"] < TOKEN_S + 0.01
+
+
+def test_kv_bytes_per_token_matches_vllm_report():
+    """Qwen2.5-1.5B: 28 layers, 2 KV heads, head_dim 128, fp16 -> 28,672 B/token.
+    vLLM 0.34 on a T4 reported 325,632 tokens in 8.70 GiB, which is the same number."""
+    from servelab.kvmath import KVSpec
+    s = KVSpec(layers=28, attn_heads=12, kv_heads=2, head_dim=128)
+    assert s.bytes_per_token == 28672
+    assert s.mha_bytes_per_token / s.bytes_per_token == 6
+    assert round(325632 * s.bytes_per_token / 2**30, 2) == 8.70
