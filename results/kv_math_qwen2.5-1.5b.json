@@ -1,0 +1,11 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "layers": 28,
+  "attn_heads": 12,
+  "kv_heads": 2,
+  "head_dim": 128,
+  "kv_bytes_per_token_fp16": 28672,
+  "without_gqa_bytes_per_token": 172032,
+  "gqa_saving_x": 6.0,
+  "context_4096_mib": 112.0
+}
