@@ -1,0 +1,15 @@
+[project]
+name = "servelab"
+version = "0.1.0"
+description = "Measure how an LLM serving stack behaves under load: TTFT, per-token latency, throughput, KV cache, tokenization."
+requires-python = ">=3.10"
+dependencies = ["aiohttp>=3.9", "tiktoken", "transformers"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["servelab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
