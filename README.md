@@ -37,7 +37,7 @@ Model: Qwen2.5-1.5B-Instruct, fp16, one Tesla T4 (15 GB), vLLM 0.34.0, 128 outpu
 
 ```mermaid
 flowchart LR
-    A[prompts.py: seeded distinct prompts] --> B[loadgen.py: C workers, one request in flight each]
+    A[workloads.py: seeded distinct prompts] --> B[loadgen.py: C workers, one request in flight each]
     B -->|SSE stream| C[vLLM OpenAI server on T4]
     C -->|first chunk, last chunk, usage| B
     B --> D[stats: TTFT, per-token, e2e, p50 p95 p99]
